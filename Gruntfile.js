@@ -17,8 +17,8 @@ module.exports = function (grunt) {
 
     // Configurable paths
     var config = {
-        app: 'app',
-        dist: 'dist'
+      app: 'app',
+      dist: 'dist'
     };
 
     // Define the configuration for all the tasks
@@ -29,280 +29,280 @@ module.exports = function (grunt) {
 
         // Watches files for changes and runs tasks based on the changed files
         watch: {
-            bower: {
-                files: ['bower.json'],
-                tasks: ['bowerInstall']
-            },
-            coffee: {
-                files: ['<%= config.app %>/scripts/{,*/}*.{coffee,litcoffee,coffee.md}'],
-                tasks: ['coffee:dist']
-            },
-            coffeeTest: {
-                files: ['test/spec/{,*/}*.{coffee,litcoffee,coffee.md}'],
-                tasks: ['coffee:test', 'test:watch']
-            },
-            gruntfile: {
-                files: ['Gruntfile.js']
-            },
-            sass: {
-                files: ['<%= config.app %>/styles/{,*/}*.{scss,sass}'],
-                tasks: ['sass:server', 'autoprefixer']
-            },
-            jade: {
-                files: ['<%= config.app %>/templates/{,*/}*.jade'],
-                tasks: ['jade:html', 'bowerInstall']
-            },
-            styles: {
-                files: ['<%= config.app %>/styles/{,*/}*.css'],
-                tasks: ['newer:copy:styles', 'autoprefixer']
-            },
-            livereload: {
-                options: {
-                    livereload: '<%= connect.options.livereload %>'
-                },
-                files: [
-                    '<%= config.app %>/{,*/}*.html',
-                    '.tmp/styles/{,*/}*.css',
-                    '.tmp/scripts/{,*/}*.js',
-                    '<%= config.app %>/images/{,*/}*'
-                    // '<%= config.app %>/templates/{,*/}*.jade'
-                ]
-            }
+          bower: {
+            files: ['bower.json'],
+            tasks: ['bowerInstall']
+          },
+          coffee: {
+          files: ['<%= config.app %>/scripts/{,*/}*.{coffee,litcoffee,coffee.md}'],
+          tasks: ['coffee:dist']
         },
+        coffeeTest: {
+        files: ['test/spec/{,*/}*.{coffee,litcoffee,coffee.md}'],
+        tasks: ['coffee:test', 'test:watch']
+      },
+      gruntfile: {
+        files: ['Gruntfile.js']
+      },
+      sass: {
+      files: ['<%= config.app %>/styles/{,*/}*.{scss,sass}'],
+      tasks: ['sass:server', 'autoprefixer']
+    },
+    jade: {
+    files: ['<%= config.app %>/templates/{,*/}*.jade'],
+    tasks: ['jade:html', 'bowerInstall']
+  },
+  styles: {
+  files: ['<%= config.app %>/styles/{,*/}*.css'],
+  tasks: ['newer:copy:styles', 'autoprefixer']
+},
+livereload: {
+  options: {
+    livereload: '<%= connect.options.livereload %>'
+  },
+  files: [
+'<%= config.app %>/{,*/}*.html',
+'.tmp/styles/{,*/}*.css',
+'.tmp/scripts/{,*/}*.js',
+'<%= config.app %>/images/{,*/}*'
+                    // '<%= config.app %>/templates/{,*/}*.jade'
+                    ]
+                  }
+                },
 
         // The actual grunt server settings
         connect: {
-            options: {
-                port: 9000,
-                open: true,
-                livereload: 35729,
+          options: {
+            port: 9000,
+            open: true,
+            livereload: 35729,
                 // Change this to '0.0.0.0' to access the server from outside
                 hostname: 'localhost'
-            },
-            livereload: {
+              },
+              livereload: {
                 options: {
-                    middleware: function(connect) {
-                        return [
-                            connect.static('.tmp'),
-                            connect().use('/bower_components', connect.static('./bower_components')),
-                            connect.static(config.app)
-                        ];
-                    }
+                  middleware: function(connect) {
+                    return [
+                    connect.static('.tmp'),
+                    connect().use('/bower_components', connect.static('./bower_components')),
+                    connect.static(config.app)
+                    ];
+                  }
                 }
-            },
-            test: {
+              },
+              test: {
                 options: {
-                    open: false,
-                    port: 9001,
-                    middleware: function(connect) {
-                        return [
-                            connect.static('.tmp'),
-                            connect.static('test'),
-                            connect().use('/bower_components', connect.static('./bower_components')),
-                            connect.static(config.app)
-                        ];
-                    }
+                  open: false,
+                  port: 9001,
+                  middleware: function(connect) {
+                    return [
+                    connect.static('.tmp'),
+                    connect.static('test'),
+                    connect().use('/bower_components', connect.static('./bower_components')),
+                    connect.static(config.app)
+                    ];
+                  }
                 }
-            },
-            dist: {
+              },
+              dist: {
                 options: {
-                    base: '<%= config.dist %>',
-                    livereload: false
+                  base: '<%= config.dist %>',
+                  livereload: false
                 }
-            }
-        },
+              }
+            },
 
         // Empties folders to start fresh
         clean: {
-            dist: {
-                files: [{
-                    dot: true,
-                    src: [
-                        '.tmp',
-                        '<%= config.dist %>/*',
-                        '!<%= config.dist %>/.git*'
-                    ]
-                }]
-            },
-            server: '.tmp'
+          dist: {
+            files: [{
+              dot: true,
+              src: [
+              '.tmp',
+              '<%= config.dist %>/*',
+              '!<%= config.dist %>/.git*'
+              ]
+            }]
+          },
+          server: '.tmp'
         },
 
         // Make sure code styles are up to par and there are no obvious mistakes
         jshint: {
-            options: {
-                jshintrc: '.jshintrc',
-                reporter: require('jshint-stylish')
-            },
-            all: [
-                'Gruntfile.js',
-                '<%= config.app %>/scripts/{,*/}*.js',
-                '!<%= config.app %>/scripts/vendor/*',
-                'test/spec/{,*/}*.js'
-            ]
-        },
+          options: {
+            jshintrc: '.jshintrc',
+            reporter: require('jshint-stylish')
+          },
+          all: [
+          'Gruntfile.js',
+        '<%= config.app %>/scripts/{,*/}*.js',
+        '!<%= config.app %>/scripts/vendor/*',
+      'test/spec/{,*/}*.js'
+      ]
+    },
 
         // Mocha testing framework configuration options
         mocha: {
-            all: {
-                options: {
-                    run: true,
-                    urls: ['http://<%= connect.test.options.hostname %>:<%= connect.test.options.port %>/index.html']
-                }
+          all: {
+            options: {
+              run: true,
+              urls: ['http://<%= connect.test.options.hostname %>:<%= connect.test.options.port %>/index.html']
             }
+          }
         },
 
         // Compiles CoffeeScript to JavaScript
         coffee: {
-            dist: {
-                files: [{
-                    expand: true,
-                    cwd: '<%= config.app %>/scripts',
-                    src: '{,*/}*.{coffee,litcoffee,coffee.md}',
-                    dest: '.tmp/scripts',
-                    ext: '.js'
-                }]
-            },
-            test: {
-                files: [{
-                    expand: true,
-                    cwd: 'test/spec',
-                    src: '{,*/}*.{coffee,litcoffee,coffee.md}',
-                    dest: '.tmp/spec',
-                    ext: '.js'
-                }]
-            }
+          dist: {
+            files: [{
+              expand: true,
+              cwd: '<%= config.app %>/scripts',
+            src: '{,*/}*.{coffee,litcoffee,coffee.md}',
+            dest: '.tmp/scripts',
+            ext: '.js'
+          }]
         },
+        test: {
+          files: [{
+            expand: true,
+            cwd: 'test/spec',
+          src: '{,*/}*.{coffee,litcoffee,coffee.md}',
+          dest: '.tmp/spec',
+          ext: '.js'
+        }]
+      }
+    },
 
         // Compiles Sass to CSS and generates necessary files if requested
         sass: {
-            options: {
-                loadPath: [
-                    'bower_components'
-                ]
-            },
-            dist: {
-                files: [{
-                    expand: true,
-                    cwd: '<%= config.app %>/styles',
-                    src: ['*.scss'],
-                    dest: '.tmp/styles',
-                    ext: '.css'
-                }]
-            },
-            server: {
-                files: [{
-                    expand: true,
-                    cwd: '<%= config.app %>/styles',
-                    src: ['*.scss'],
-                    dest: '.tmp/styles',
-                    ext: '.css'
-                }]
-            }
+          options: {
+            loadPath: [
+            'bower_components'
+            ]
+          },
+          dist: {
+            files: [{
+              expand: true,
+              cwd: '<%= config.app %>/styles',
+              src: ['*.scss'],
+              dest: '.tmp/styles',
+              ext: '.css'
+            }]
+          },
+          server: {
+            files: [{
+              expand: true,
+              cwd: '<%= config.app %>/styles',
+              src: ['*.scss'],
+              dest: '.tmp/styles',
+              ext: '.css'
+            }]
+          }
         },
 
         // Add vendor prefixed styles
         autoprefixer: {
-            options: {
-                browsers: ['last 1 version']
-            },
-            dist: {
-                files: [{
-                    expand: true,
-                    cwd: '.tmp/styles/',
-                    src: '{,*/}*.css',
-                    dest: '.tmp/styles/'
-                }]
-            }
-        },
+          options: {
+            browsers: ['last 1 version']
+          },
+          dist: {
+            files: [{
+              expand: true,
+              cwd: '.tmp/styles/',
+            src: '{,*/}*.css',
+            dest: '.tmp/styles/'
+          }]
+        }
+      },
 
         // Automatically inject Bower components into the HTML file
         bowerInstall: {
-            app: {
-                src: ['<%= config.app %>/index.html'],
-                exclude: ['bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap.js']
-            },
-            sass: {
-                src: ['<%= config.app %>/styles/{,*/}*.{scss,sass}']
-            }
-        },
+          app: {
+            src: ['<%= config.app %>/index.html'],
+            exclude: ['bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap.js']
+          },
+          sass: {
+          src: ['<%= config.app %>/styles/{,*/}*.{scss,sass}']
+        }
+      },
 
         // Renames files for browser caching purposes
         rev: {
-            dist: {
-                files: {
-                    src: [
-                        '<%= config.dist %>/scripts/{,*/}*.js',
-                        '<%= config.dist %>/styles/{,*/}*.css',
-                        '<%= config.dist %>/images/{,*/}*.*',
-                        '<%= config.dist %>/styles/fonts/{,*/}*.*',
-                        '<%= config.dist %>/*.{ico,png}'
-                    ]
-                }
-            }
-        },
+          dist: {
+            files: {
+              src: [
+            '<%= config.dist %>/scripts/{,*/}*.js',
+          '<%= config.dist %>/styles/{,*/}*.css',
+        '<%= config.dist %>/images/{,*/}*.*',
+      '<%= config.dist %>/styles/fonts/{,*/}*.*',
+      '<%= config.dist %>/*.{ico,png}'
+      ]
+    }
+  }
+},
 
         // Reads HTML for usemin blocks to enable smart builds that automatically
         // concat, minify and revision files. Creates configurations in memory so
         // additional tasks can operate on them
         useminPrepare: {
-            options: {
-                dest: '<%= config.dist %>'
-            },
-            html: '<%= config.app %>/index.html'
+          options: {
+            dest: '<%= config.dist %>'
+          },
+          html: '<%= config.app %>/index.html'
         },
 
         // Performs rewrites based on rev and the useminPrepare configuration
         usemin: {
-            options: {
-                assetsDirs: ['<%= config.dist %>', '<%= config.dist %>/images']
-            },
-            html: ['<%= config.dist %>/{,*/}*.html'],
-            css: ['<%= config.dist %>/styles/{,*/}*.css']
-        },
+          options: {
+            assetsDirs: ['<%= config.dist %>', '<%= config.dist %>/images']
+          },
+        html: ['<%= config.dist %>/{,*/}*.html'],
+      css: ['<%= config.dist %>/styles/{,*/}*.css']
+    },
 
         // The following *-min tasks produce minified files in the dist folder
         imagemin: {
-            dist: {
-                files: [{
-                    expand: true,
-                    cwd: '<%= config.app %>/images',
-                    src: '{,*/}*.{gif,jpeg,jpg,png}',
-                    dest: '<%= config.dist %>/images'
-                }]
-            }
-        },
+          dist: {
+            files: [{
+              expand: true,
+              cwd: '<%= config.app %>/images',
+            src: '{,*/}*.{gif,jpeg,jpg,png}',
+            dest: '<%= config.dist %>/images'
+          }]
+        }
+      },
 
-        svgmin: {
-            dist: {
-                files: [{
-                    expand: true,
-                    cwd: '<%= config.app %>/images',
-                    src: '{,*/}*.svg',
-                    dest: '<%= config.dist %>/images'
-                }]
-            }
-        },
+      svgmin: {
+        dist: {
+          files: [{
+            expand: true,
+            cwd: '<%= config.app %>/images',
+          src: '{,*/}*.svg',
+          dest: '<%= config.dist %>/images'
+        }]
+      }
+    },
 
-        htmlmin: {
-            dist: {
-                options: {
-                    collapseBooleanAttributes: true,
-                    collapseWhitespace: true,
-                    removeAttributeQuotes: true,
-                    removeCommentsFromCDATA: true,
-                    removeEmptyAttributes: true,
-                    removeOptionalTags: true,
-                    removeRedundantAttributes: true,
-                    useShortDoctype: true
-                },
-                files: [{
-                    expand: true,
-                    cwd: '<%= config.dist %>',
-                    src: '{,*/}*.html',
-                    dest: '<%= config.dist %>'
-                }]
-            }
+    htmlmin: {
+      dist: {
+        options: {
+          collapseBooleanAttributes: true,
+          collapseWhitespace: true,
+          removeAttributeQuotes: true,
+          removeCommentsFromCDATA: true,
+          removeEmptyAttributes: true,
+          removeOptionalTags: true,
+          removeRedundantAttributes: true,
+          useShortDoctype: true
         },
+        files: [{
+          expand: true,
+          cwd: '<%= config.dist %>',
+        src: '{,*/}*.html',
+        dest: '<%= config.dist %>'
+      }]
+    }
+  },
 
         // jade: {
         //   html: {
@@ -356,132 +356,132 @@ module.exports = function (grunt) {
 
         // Copies remaining files to places other tasks can use
         copy: {
-            dist: {
-                files: [{
-                    expand: true,
-                    dot: true,
-                    cwd: '<%= config.app %>',
-                    dest: '<%= config.dist %>',
-                    src: [
-                        '*.{ico,png,txt}',
-                        'images/{,*/}*{png,jpg,gif}',
-                        '.htaccess',
-                        'images/{,*/}*.webp',
-                        '{,*/}*.html',
-                        'styles/fonts/{,*/}*.*'
-                    ]
-                }, {
-                    expand: true,
-                    dot: true,
-                    cwd: '.',
-                    src: ['bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/*.*'],
-                    dest: '<%= config.dist %>'
-                }]
-            },
-            styles: {
-                expand: true,
-                dot: true,
-                cwd: '<%= config.app %>/styles',
-                dest: '.tmp/styles/',
-                src: '{,*/}*.css'
-            }
-        },
+          dist: {
+            files: [{
+              expand: true,
+              dot: true,
+              cwd: '<%= config.app %>',
+              dest: '<%= config.dist %>',
+              src: [
+              '*.{ico,png,txt}',
+            'images/{,*/}*{png,jpg,gif}',
+            '.htaccess',
+          'images/{,*/}*.webp',
+        '{,*/}*.html',
+      'styles/fonts/{,*/}*.*'
+      ]
+    }, {
+      expand: true,
+      dot: true,
+      cwd: '.',
+      src: ['bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/*.*'],
+      dest: '<%= config.dist %>'
+    }]
+  },
+  styles: {
+    expand: true,
+    dot: true,
+    cwd: '<%= config.app %>/styles',
+    dest: '.tmp/styles/',
+  src: '{,*/}*.css'
+}
+},
 
         // Generates a custom Modernizr build that includes only the tests you
         // reference in your app
         modernizr: {
-            dist: {
-                devFile: 'bower_components/modernizr/modernizr.js',
-                outputFile: '<%= config.dist %>/scripts/vendor/modernizr.js',
-                files: {
-                    src: [
-                        '<%= config.dist %>/scripts/{,*/}*.js',
-                        '<%= config.dist %>/styles/{,*/}*.css',
-                        '!<%= config.dist %>/scripts/vendor/*'
-                    ]
-                },
-                uglify: true
-            }
+          dist: {
+            devFile: 'bower_components/modernizr/modernizr.js',
+            outputFile: '<%= config.dist %>/scripts/vendor/modernizr.js',
+            files: {
+              src: [
+            '<%= config.dist %>/scripts/{,*/}*.js',
+          '<%= config.dist %>/styles/{,*/}*.css',
+          '!<%= config.dist %>/scripts/vendor/*'
+          ]
         },
+        uglify: true
+      }
+    },
 
         // Run some tasks in parallel to speed up build process
         concurrent: {
-            server: [
-                'jade:html',
-                'sass:server',
-                'coffee:dist',
-                'copy:styles'
-            ],
-            test: [
-                'coffee',
-                'copy:styles'
-            ],
-            dist: [
+          server: [
+          'jade:html',
+          'sass:server',
+          'coffee:dist',
+          'copy:styles'
+          ],
+          test: [
+          'coffee',
+          'copy:styles'
+          ],
+          dist: [
                 // 'jade:html',
                 'coffee',
                 'sass',
                 'copy:styles',
                 // 'imagemin',
                 // 'svgmin'
-            ]
-        }
-    });
+                ]
+              }
+            });
 
 
-    grunt.registerTask('serve', function (target) {
-        if (target === 'dist') {
-            return grunt.task.run(['build', 'connect:dist:keepalive']);
-        }
+grunt.registerTask('serve', function (target) {
+  if (target === 'dist') {
+    return grunt.task.run(['build', 'connect:dist:keepalive']);
+  }
 
-        grunt.task.run([
-            'clean:server',
-            'concurrent:server',
-            'autoprefixer',
-            'connect:livereload',
-            'watch'
-        ]);
-    });
-
-    grunt.registerTask('server', function (target) {
-        grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
-        grunt.task.run([target ? ('serve:' + target) : 'serve']);
-    });
-
-    grunt.registerTask('test', function (target) {
-        if (target !== 'watch') {
-            grunt.task.run([
-                'clean:server',
-                'concurrent:test',
-                'autoprefixer'
-            ]);
-        }
-
-        grunt.task.run([
-            'connect:test',
-            'mocha'
-        ]);
-    });
-
-    grunt.registerTask('build', [
-        'clean:dist',
-        'jade:html',
-        'bowerInstall',
-        'useminPrepare',
-        'concurrent:dist',
-        'autoprefixer',
-        'concat',
-        'cssmin',
-        'uglify',
-        'copy:dist',
-        'modernizr',
-        'rev',
-        'usemin',
-        'htmlmin'
+  grunt.task.run([
+    'clean:server',
+    'concurrent:server',
+    'autoprefixer',
+    'connect:livereload',
+    'watch'
     ]);
+});
 
-    grunt.registerTask('default', [
-        'newer:jshint',
-        'test',
-        'build'
+grunt.registerTask('server', function (target) {
+  grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
+  grunt.task.run([target ? ('serve:' + target) : 'serve']);
+});
+
+grunt.registerTask('test', function (target) {
+  if (target !== 'watch') {
+    grunt.task.run([
+      'clean:server',
+      'concurrent:test',
+      'autoprefixer'
+      ]);
+  }
+
+  grunt.task.run([
+    'connect:test',
+    'mocha'
     ]);
+});
+
+grunt.registerTask('build', [
+  'clean:dist',
+  'jade:html',
+  'bowerInstall',
+  'useminPrepare',
+  'concurrent:dist',
+  'autoprefixer',
+  'concat',
+  'cssmin',
+  'uglify',
+  'copy:dist',
+  'modernizr',
+  'rev',
+  'usemin',
+  'htmlmin'
+  ]);
+
+grunt.registerTask('default', [
+  'newer:jshint',
+  'test',
+  'build'
+  ]);
 };

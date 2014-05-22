@@ -1,8 +1,13 @@
 $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+$fa-font-path: "/bower_components/fontawesome/fonts/";
+
 
 // bower:scss
 @import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
 // endbower
+@import "../../bower_components/fontawesome/scss/font-awesome.scss";
+
+
 
 
 @import "colors.scss";
@@ -152,7 +157,8 @@ body {
   padding-bottom: 50px;
   text-align: center;
   background: url('/images/computer_header.jpg') no-repeat fixed;
-  background-position: top right;
+  background-position-x: right;
+  background-position-y: 60px;
   background-size: 100%;
   color: white;
 
