@@ -374,7 +374,10 @@ livereload: {
       expand: true,
       dot: true,
       cwd: '.',
-      src: ['bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/*.*'],
+      src: [
+      'bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/*.*',
+      'bower_components/fontawesome/fonts/*.*'
+      ],
       dest: '<%= config.dist %>'
     }]
   },
