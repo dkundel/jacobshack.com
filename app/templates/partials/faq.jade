@@ -1,3 +1,8 @@
+mixin jacobsHack()
+  span.jacobsHackText
+    | jacobs
+    em Hack!
+
 mixin faqEntry(question)
   .col-lg-4.col-md-6.faqEntry
     h4.questionHeadline= question
@@ -10,46 +15,38 @@ mixin faqEntry(question)
 
   +faqEntry('Where does jacobsHack! take place?')
     p
-      em jacobsHack! &nbsp;
-      | will take place on the campus of Jacobs University
-      | Bremen, Germany
+      em
+      +jacobsHack()
+      | &nbsp;will take place on the campus of&nbsp;
+      a(href="https://jacobs-university.de/visit" target="_blank") Jacobs University
+      | &nbsp;Bremen, Germany
 
-  +faqEntry('Something')
+  +faqEntry('I will have already graduated from university. Can I participate?')
     p
-      | Brownie tootsie roll dessert. Sweet roll ice cream toffee ice cream cake brownie cake apple pie. Dragée powder cake sweet roll fruitcake toffee cupcake tootsie roll chocolate.
-    p
-      | Apple pie cotton candy candy canes. Sweet gummi bears pie toffee. Sweet chocolate bar oat cake unerdwear.com gingerbread.
-    p
-      | Donut candy applicake jelly-o cheesecake sugar plum wafer. Macaroon unerdwear.com lollipop candy liquorice liquorice topping sugar plum. Jelly muffin chupa chups icing caramels caramels.
+      | No,&nbsp;
+      +jacobsHack()
+      | &nbsp;is meant for university and high school students. You have to be enrolled in an educational facility to be able to participate.
 
-  +faqEntry('Something')
+  +faqEntry('I am still in high school. Can I participate?')
     p
-      | Brownie tootsie roll dessert. Sweet roll ice cream toffee ice cream cake brownie cake apple pie. Dragée powder cake sweet roll fruitcake toffee cupcake tootsie roll chocolate.
+      | Yes!&nbsp;
+      +jacobsHack()
+      | &nbsp;is open to university and high school students. The most important thing is that you bring passion and have fun!
     p
-      | Apple pie cotton candy candy canes. Sweet gummi bears pie toffee. Sweet chocolate bar oat cake unerdwear.com gingerbread.
-    p
-      | Donut candy applicake jelly-o cheesecake sugar plum wafer. Macaroon unerdwear.com lollipop candy liquorice liquorice topping sugar plum. Jelly muffin chupa chups icing caramels caramels.
+      | If you are still under 18, your parents will have to sign a form of consent for us.
 
-  +faqEntry('Something')
+  +faqEntry('What do I need to bring?')
     p
-      | Brownie tootsie roll dessert. Sweet roll ice cream toffee ice cream cake brownie cake apple pie. Dragée powder cake sweet roll fruitcake toffee cupcake tootsie roll chocolate.
+      | Enthusiasm. Basic toiletries and a sleeping bag in case you are planning to sleep might be useful as well!
     p
-      | Apple pie cotton candy candy canes. Sweet gummi bears pie toffee. Sweet chocolate bar oat cake unerdwear.com gingerbread.
-    p
-      | Donut candy applicake jelly-o cheesecake sugar plum wafer. Macaroon unerdwear.com lollipop candy liquorice liquorice topping sugar plum. Jelly muffin chupa chups icing caramels caramels.
+      | Food will be provided during the event. Please make sure to mention special dietary requirements in your registration.
 
-  +faqEntry('Something')
+  +faqEntry('When does registration start?')
     p
-      | Brownie tootsie roll dessert. Sweet roll ice cream toffee ice cream cake brownie cake apple pie. Dragée powder cake sweet roll fruitcake toffee cupcake tootsie roll chocolate.
-    p
-      | Apple pie cotton candy candy canes. Sweet gummi bears pie toffee. Sweet chocolate bar oat cake unerdwear.com gingerbread.
-    p
-      | Donut candy applicake jelly-o cheesecake sugar plum wafer. Macaroon unerdwear.com lollipop candy liquorice liquorice topping sugar plum. Jelly muffin chupa chups icing caramels caramels.
+      | Soon! If you want to be notified once registration starts please leave your email and we will notify you once we start.
 
-  +faqEntry('Something')
+  +faqEntry('I have another question!')
     p
-      | Brownie tootsie roll dessert. Sweet roll ice cream toffee ice cream cake brownie cake apple pie. Dragée powder cake sweet roll fruitcake toffee cupcake tootsie roll chocolate.
-    p
-      | Apple pie cotton candy candy canes. Sweet gummi bears pie toffee. Sweet chocolate bar oat cake unerdwear.com gingerbread.
-    p
-      | Donut candy applicake jelly-o cheesecake sugar plum wafer. Macaroon unerdwear.com lollipop candy liquorice liquorice topping sugar plum. Jelly muffin chupa chups icing caramels caramels.
+      | We got you covered. Email us at&nbsp;
+      a(href="mailto:team@jacobshack.com") team@jacobshack.com
+      | .
