@@ -2,7 +2,7 @@ mixin whatIsItem(icon, headline)
   .col-sm-3
     .well
       span.itemsIcon(class=icon)
-      h3= headline
+      h3!= headline
       if block
         block
 
