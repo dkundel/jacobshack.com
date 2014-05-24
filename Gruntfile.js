@@ -427,7 +427,15 @@ livereload: {
                 // 'imagemin',
                 // 'svgmin'
                 ]
-              }
+            },
+            'gh-pages': {
+              options: {
+                base: 'dist',
+                branch: 'production',
+                message: 'Deployed website <%= grunt.template.today("yyyy-mm-dd") %>'
+              },
+              src: '**/*'
+            }
             });
 
 
@@ -481,6 +489,10 @@ grunt.registerTask('build', [
   'usemin',
   'htmlmin'
   ]);
+
+grunt.registerTask('deploy', [
+  'build',
+  'gh-pages']);
 
 grunt.registerTask('default', [
   'newer:jshint',
