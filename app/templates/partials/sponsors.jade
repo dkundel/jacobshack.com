@@ -8,9 +8,15 @@ mixin jacobsHack()
     h1#sponsors Sponsors
     p.lead To be announced...
 
-    p.text-center
+    .row.magin-jacobs-sponsor
+      .col-sm-4.col-sm-offset-4.col-xs-6.col-xs-offset-3
+        p.lead.text-center
+          | Powered by:
+        img.img-responsive(src="/images/jacobs-logo.png")
+
+    p.lead.text-center
       | If you are interested in sponsoring&nbsp;
       +jacobsHack()
       | &nbsp;just send us an email to get more information.
-    p.text-center
-      a(href="mailto:sponsor@jacobshack.com").btn.btn-jub.btn-sm sponsor@jacobshack.com
+    p.lead.text-center
+      a(href="mailto:sponsor@jacobshack.com").btn.btn-jub sponsor@jacobshack.com
