@@ -368,7 +368,8 @@ livereload: {
             '.htaccess',
           'images/{,*/}*.webp',
         '{,*/}*.html',
-      'styles/fonts/{,*/}*.*'
+      'styles/fonts/{,*/}*.*',
+      'data/*.pdf'
       ]
     }, {
       expand: true,

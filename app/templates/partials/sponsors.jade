@@ -6,12 +6,13 @@ mixin jacobsHack()
 .row
   .col-xs-12
     h1#sponsors Sponsors
-    p.lead.text-center
+    p.lead.text-center.bold-face
       | If you are interested in sponsoring&nbsp;
       +jacobsHack()
       | &nbsp;just send us an email to get more information.
     p.lead.text-center
-      a(href="mailto:sponsor@jacobshack.com").btn.btn-jub sponsor@jacobshack.com
+      a(href="/data/sponsoring.pdf").btn.btn-jub.margin-button View Sponsoring Info
+      a(href="mailto:sponsor@jacobshack.com").btn.btn-jub Email sponsor@jacobshack.com
 
     .row.magin-jacobs-sponsor
       .col-sm-4.col-sm-offset-4.col-xs-6.col-xs-offset-3
