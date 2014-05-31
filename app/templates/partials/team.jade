@@ -1,3 +1,8 @@
+mixin jacobsHack()
+  span.jacobsHackText
+    | jacobs
+    em Hack!
+
 .row
   .col-xs-12
     h1#team Team
@@ -7,11 +12,52 @@
       | the Computer Science Club at Jacobs University Bremen.
       | Feel free to contact us if you have any questions.
 
+    .row
+      .col-xs-6.col-sm-4.col-md-3.col-lg-3
+        .well
+          img.img-rounded.img-responsive(src="/images/dominik.jpg")
+          p.text-center
+            strong.lead Dominik <br/>
+            | Main-Organizer <br/>
+            a(href="mailto:dominik@jacobshack.com") dominik@jacobshack.com
+      .col-xs-6.col-sm-4.col-md-3.col-lg-3
+        .well
+          img.img-rounded.img-responsive(src="/images/naomi.jpg")
+          p.text-center
+            strong.lead Naomi <br/>
+            | Main-Organizer <br/>
+            a(href="mailto:naomi@jacobshack.com") naomi@jacobshack.com
+      .col-xs-6.col-sm-4.col-md-3.col-lg-3
+        .well
+          img.img-rounded.img-responsive(src="/images/dmitrii.jpg")
+          p.text-center
+            strong.lead Dmitrii <br/>
+            | Onboarding <br/>
+            a(href="mailto:dmitrii@jacobshack.com") dmitrii@jacobshack.com
+      .col-xs-6.col-sm-4.col-md-3.col-lg-3
+        .well
+          img.img-rounded.img-responsive(src="/images/filip.jpg")
+          p.text-center
+            strong.lead Filip <br/>
+            | IT Infrastructure <br/>
+            a(href="mailto:filip@jacobshack.com") filip@jacobshack.com
+      .col-xs-6.col-sm-4.col-md-3.col-lg-3
+        .well
+          img.img-rounded.img-responsive(src="/images/vlad.jpg")
+          p.text-center
+            strong.lead Vlad <br/>
+            | Event Logistics <br/>
+            a(href="mailto:vlad@jacobshack.com") vlad@jacobshack.com
+
     address.text-center
-      strong jacobsHack
+      strong
+        +jacobsHack()
       br
       | CampusLife Department <br/>
       | Jacobs University Bremen <br/>
       | 28759 Bremen, Germany <br/>
       | Email: &nbsp;
       a(href="team@jacobshack.com") team@jacobshack.com
+
+
+
