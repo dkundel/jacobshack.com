@@ -196,7 +196,7 @@ body {
   margin-right: 1em;
 }
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 1070px) {
   .fullsize-image-header {
     .centered-logo {
       width: 300px;
@@ -204,10 +204,15 @@ body {
   }
 }
 
-@media screen and (max-width: 790px) {
+@media screen and (max-width: 860px) {
   .fullsize-image-header {
     padding-top: 20px;
-    paddint-bottom: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .fullsize-image-header {
     .centered-logo {
       width: 200px;
     }
@@ -221,7 +226,7 @@ body {
   }
 }
 
-@media screen and (max-width: 468px) {
+@media screen and (max-width: 536px) {
   body {
     padding-top: 122px;
   }
