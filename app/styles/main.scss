@@ -25,6 +25,16 @@ body {
     padding-bottom: 20px;
 }
 
+.sponsor-logo {
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sap-logo {
+  padding: 0 15%;
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -231,7 +241,7 @@ body {
     padding-top: 122px;
   }
   .fullsize-image-header {
-    background-position-y: 115px;
+    background-position-y: top;
   }
 }
 
