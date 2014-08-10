@@ -388,6 +388,13 @@ livereload: {
     cwd: '<%= config.app %>/styles',
     dest: '.tmp/styles/',
   src: '{,*/}*.css'
+},
+fb: {
+  expand: true,
+  dot: true,
+  cwd: '<%= config.app %>/images',
+  src: 'fb_preview.jpg',
+  dest: '<%= config.dist %>/images'
 }
 },
 
@@ -488,7 +495,8 @@ grunt.registerTask('build', [
   'modernizr',
   'rev',
   'usemin',
-  'htmlmin'
+  'htmlmin',
+  'copy:fb'
   ]);
 
 grunt.registerTask('deploy', [
