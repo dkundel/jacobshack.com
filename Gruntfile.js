@@ -393,7 +393,7 @@ fb: {
   expand: true,
   dot: true,
   cwd: '<%= config.app %>/images',
-  src: 'fb_preview.jpg',
+  src: 'fb_{preview,square}.jpg',
   dest: '<%= config.dist %>/images'
 }
 },
