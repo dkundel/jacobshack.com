@@ -101,27 +101,27 @@ body {
 
 @keyframes background-rotation {
   0% {
-    background-image: url('/images/background/1.jpg');
+    background-image: url('../images/background/1.jpg');
   }
 
   20% {
-    background-image: url('/images/background/2.jpg');
+    background-image: url('../images/background/2.jpg');
   }
 
   40% {
-    background-image: url('/images/background/3.jpg');
+    background-image: url('../images/background/3.jpg');
   }
 
   60% {
-    background-image: url('/images/background/4.jpg');
+    background-image: url('../images/background/4.jpg');
   }
 
   80% {
-    background-image: url('/images/background/5.jpg');
+    background-image: url('../images/background/5.jpg');
   }
 
   100% {
-    background-image: url('/images/background/1.jpg');
+    background-image: url('../images/background/1.jpg');
   }
 }
 
@@ -215,6 +215,7 @@ body {
 }
 
 .footer {
+
   color: #fff;
   a, a:visited, a:hover, a:focus {
     color: #fff;
