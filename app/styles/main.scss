@@ -99,45 +99,115 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-@keyframes background-rotation {
-  0% {
-    background-image: url('../images/background/1.jpg');
-  }
-
-  20% {
-    background-image: url('../images/background/2.jpg');
-  }
-
-  40% {
-    background-image: url('../images/background/3.jpg');
-  }
-
-  60% {
-    background-image: url('../images/background/4.jpg');
-  }
-
-  80% {
-    background-image: url('../images/background/5.jpg');
-  }
-
-  100% {
-    background-image: url('../images/background/1.jpg');
-  }
+@keyframes bg1-animation {
+  0% { opacity: 1; }
+  10% { opacity: 1; };
+  20% { opacity: 0; }
+  30% { opacity: 0; }
+  40% { opacity: 0; }
+  50% { opacity: 0; }
+  60% { opacity: 0; }
+  70% { opacity: 0; }
+  80% { opacity: 0; }
+  90% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes bg2-animation {
+  0% { opacity: 0; }
+  10% { opacity: 0; };
+  20% { opacity: 1; }
+  30% { opacity: 1; }
+  40% { opacity: 0; }
+  50% { opacity: 0; }
+  60% { opacity: 0; }
+  70% { opacity: 0; }
+  80% { opacity: 0; }
+  90% { opacity: 0; }
+  100% { opacity: 0; }
+}
+@keyframes bg3-animation {
+  0% { opacity: 0; }
+  10% { opacity: 0; };
+  20% { opacity: 0; }
+  30% { opacity: 0; }
+  40% { opacity: 1; }
+  50% { opacity: 1; }
+  60% { opacity: 0; }
+  70% { opacity: 0; }
+  80% { opacity: 0; }
+  90% { opacity: 0; }
+  100% { opacity: 0; }
+}
+@keyframes bg4-animation {
+  0% { opacity: 0; }
+  10% { opacity: 0; };
+  20% { opacity: 0; }
+  30% { opacity: 0; }
+  40% { opacity: 0; }
+  50% { opacity: 0; }
+  60% { opacity: 1; }
+  70% { opacity: 1; }
+  80% { opacity: 0; }
+  90% { opacity: 0; }
+  100% { opacity: 0; }
+}
+@keyframes bg5-animation {
+  0% { opacity: 0; }
+  10% { opacity: 0; };
+  20% { opacity: 0; }
+  30% { opacity: 0; }
+  40% { opacity: 0; }
+  50% { opacity: 0; }
+  60% { opacity: 0; }
+  70% { opacity: 0; }
+  80% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 .fullscreen-background {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position-x: 50%;
-  display: block;
-  filter: sepia(1) blur(5px) hue-rotate(180deg) brightness(70%) contrast(100%);
-  animation: background-rotation 30s infinite;
-  animation-timing-function: ease-in-out;
-  height: 100%;
+  min-height: 100%;
   left: 0;
   position: fixed;
   right: 0;
   z-index: -1;
+  div {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: block;
+    filter: sepia(1) blur(5px) hue-rotate(180deg) brightness(70%) contrast(100%);
+    min-height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    // z-index: -1;
+  }
+  .img1 {
+    animation: bg1-animation 30s infinite;
+    // animation-timing-function: ease-in-out;
+    background-image: url(../images/background/1.jpg);
+  }
+  .img2 {
+    animation: bg2-animation 30s infinite;
+    // animation-timing-function: ease-in-out;
+    background-image: url(../images/background/2.jpg);
+  }
+  .img3 {
+    animation: bg3-animation 30s infinite;
+    // animation-timing-function: ease-in-out;
+    background-image: url(../images/background/3.jpg);
+  }
+  .img4 {
+    animation: bg4-animation 30s infinite;
+    // animation-timing-function: ease-in-out;
+    background-image: url(../images/background/4.jpg);
+  }
+  .img5 {
+    animation: bg5-animation 30s infinite;
+    // animation-timing-function: ease-in-out;
+    background-image: url(../images/background/5.jpg);
+  }
 }
 
 .announcement-block {
@@ -164,7 +234,7 @@ body {
   background-color: $color;
   border: 2px solid transparent;
   border-color: $background;
-  transition: all 0.3s ease;
+  transition: all 0.1s ease;
   text-transform: uppercase;
   // font-family: 'Source Sans Pro', sans-serif;
   // font-weight: 300;
