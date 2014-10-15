@@ -171,43 +171,46 @@ body {
   position: fixed;
   right: 0;
   z-index: -1;
-  div {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    display: block;
-    filter: sepia(1) blur(5px) hue-rotate(180deg) brightness(70%) contrast(100%);
-    min-height: 100%;
-    left: 0;
-    position: absolute;
-    right: 0;
-    // z-index: -1;
-  }
-  .img1 {
-    animation: bg1-animation 30s infinite;
-    // animation-timing-function: ease-in-out;
-    background-image: url(../images/background/1.jpg);
-  }
-  .img2 {
-    animation: bg2-animation 30s infinite;
-    // animation-timing-function: ease-in-out;
-    background-image: url(../images/background/2.jpg);
-  }
-  .img3 {
-    animation: bg3-animation 30s infinite;
-    // animation-timing-function: ease-in-out;
-    background-image: url(../images/background/3.jpg);
-  }
-  .img4 {
-    animation: bg4-animation 30s infinite;
-    // animation-timing-function: ease-in-out;
-    background-image: url(../images/background/4.jpg);
-  }
-  .img5 {
-    animation: bg5-animation 30s infinite;
-    // animation-timing-function: ease-in-out;
-    background-image: url(../images/background/5.jpg);
-  }
+  // background-size: cover;
+  background-repeat: repeat;
+  background-image: url(../images/background/pattern.png);
+  // div {
+  //   background-size: cover;
+  //   background-repeat: no-repeat;
+  //   background-position: center center;
+  //   display: block;
+  //   filter: sepia(1) blur(5px) hue-rotate(180deg) brightness(70%) contrast(100%);
+  //   min-height: 100%;
+  //   left: 0;
+  //   position: absolute;
+  //   right: 0;
+  //   // z-index: -1;
+  // }
+  // .img1 {
+  //   animation: bg1-animation 30s infinite;
+  //   // animation-timing-function: ease-in-out;
+  //   background-image: url(../images/background/1.jpg);
+  // }
+  // .img2 {
+  //   animation: bg2-animation 30s infinite;
+  //   // animation-timing-function: ease-in-out;
+  //   background-image: url(../images/background/2.jpg);
+  // }
+  // .img3 {
+  //   animation: bg3-animation 30s infinite;
+  //   // animation-timing-function: ease-in-out;
+  //   background-image: url(../images/background/3.jpg);
+  // }
+  // .img4 {
+  //   animation: bg4-animation 30s infinite;
+  //   // animation-timing-function: ease-in-out;
+  //   background-image: url(../images/background/4.jpg);
+  // }
+  // .img5 {
+  //   animation: bg5-animation 30s infinite;
+  //   // animation-timing-function: ease-in-out;
+  //   background-image: url(../images/background/5.jpg);
+  // }
 }
 
 .announcement-block {
