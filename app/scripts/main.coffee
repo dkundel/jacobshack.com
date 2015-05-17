@@ -18,6 +18,10 @@ initializeMap = () ->
   mapOptions = 
     zoom: 16,
     center: new google.maps.LatLng(53.166890, 8.650116),
+    mapTypeControl: false,
+    scrollwheel:false,
+    navigationControl: false,
+    streetViewControl: false,
     disableDefaultUI: true
   
   map = new google.maps.Map document.getElementById('map'), mapOptions
