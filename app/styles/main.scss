@@ -108,3 +108,91 @@ body {
   height: 400px;
   padding: 0;
 }
+
+@keyframes lightningAnimation {
+  0% {
+    opacity: 0;
+  }
+  
+  10% {
+    width: 15%;
+    opacity: 1;
+    transform: translateX(-45%) translateY(-30%);
+  }
+  
+  90% {
+    width: 10%;
+    transform: translateX(-45%) translateY(8%);
+  }
+  
+  99% {
+    opacity: 1;
+  }
+  
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes logoAppearance {
+  0% {
+    opacity: 0;
+  }
+  
+  90% {
+    opacity: 0;
+  }
+  
+  95% {
+    opacity: 1;
+  }
+  
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes logoDisappearance {
+  0% {
+    opacity: 1;
+  }
+  
+  95% {
+    opacity: 1;
+  }
+  
+  99% {
+    opacity: 1;
+  }
+  
+  100% {
+    opacity: 0;
+  }
+}
+
+$animationDuration: 3s;
+
+#logoContainer {
+  position: relative;
+  
+  #emptyLogo {
+    position: absolute;
+    opacity: 0;
+    animation: logoDisappearance $animationDuration ease 0s;
+    animation-fill-mode: forwards;
+  }
+  
+  #lightningLogo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 10%;
+    transform: translateX(-45%) translateY(8%);
+    animation: lightningAnimation $animationDuration ease 0s;
+  }
+  
+  #finalLogo {
+    animation: logoAppearance $animationDuration ease 0s;
+    animation-fill-mode: forwards;
+  }
+}
