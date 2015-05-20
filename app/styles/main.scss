@@ -5,6 +5,9 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+$headerBackground: #ECF0F1;
+$jacobshackBlue: #07457B;
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -93,6 +96,83 @@ body {
   }
 }
 
+// Button override
+// ------------------------------------------
+
+$btn-primary-color: $jacobshackBlue;
+$btn-primary-bg: transparent;
+$btn-primary-font-hover: #fff;
+
+@mixin button-variant-flat($color, $background, $backgroundFont) {
+  color: $color;
+  background-color: $background;
+  border-color: $color;
+  border-radius: 0;
+  border-width: 2px;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    color: $backgroundFont;
+    background-color: $color;
+        border-color: $color;
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      color: $background;
+      background-color: lighten($color, 20%);
+          border-color: lighten($color, 20%);
+    }
+  }
+
+  .badge {
+    color: $background;
+    background-color: $color;
+  }
+}
+
+.btn-default {
+  @include button-variant-flat(#fff, transparent, $jacobshackBlue);
+}
+.btn-primary {
+  @include button-variant-flat($btn-primary-bg, $btn-primary-bg, $btn-primary-font-hover);
+}
+
+// Success appears as green
+.btn-success {
+  @include button-variant-flat($btn-success-bg, transparent, #fff);
+}
+// Info appears as blue-green
+.btn-info {
+  @include button-variant-flat($btn-info-bg, transparent, #fff);
+}
+// Warning appears as orange
+.btn-warning {
+  @include button-variant-flat($btn-warning-bg, transparent, #fff);
+}
+// Danger and error appear as red
+.btn-danger {
+  @include button-variant-flat($btn-danger-bg, transparent, #fff);
+}
+
+
+
+// End of Button override
+// -----------
+
 body {
   margin: 0;
   padding: 0;
@@ -172,6 +252,16 @@ body {
 
 $animationDuration: 3s;
 
+header {
+  height: 100vh;
+  background: $headerBackground;
+  display: flex;
+  align-items: center;
+  
+  .wrapper {
+  }
+}
+
 #logoContainer {
   position: relative;
   
@@ -194,5 +284,138 @@ $animationDuration: 3s;
   #finalLogo {
     animation: logoAppearance $animationDuration ease 0s;
     animation-fill-mode: forwards;
+  }
+}
+
+section {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  &.light {
+    
+  }
+  
+  &.dark {
+    color: #fff;
+ 	  background: $jacobshackBlue; 
+  }
+}
+
+footer {
+  p {
+    margin: 0;
+    
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  a {
+    &:hover, &:visited, &:focus {
+      color: #fff;
+    }
+  }
+   
+  color: #fff;
+  background: $jacobshackBlue;
+  margin: 0;
+}
+
+.btn-round-social {
+  background: $headerBackground;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  
+  > i.fa.fa-lg {
+    vertical-align: super; // center icons in round button  
+  }
+  
+  &.btn-github {
+    @include button-variant-flat(#333333, transparent, $headerBackground);
+  }
+  
+  &.btn-twitter {
+    @include button-variant-flat(#55acee, transparent, $headerBackground);
+  }
+  
+  &.btn-mail {
+    @include button-variant-flat($jacobshackBlue, transparent, $headerBackground);
+  }
+  
+  &.btn-facebook {
+    @include button-variant-flat(#3b5998, transparent, $headerBackground);
+  }
+  
+  border-radius: 100% !important;
+}
+
+.team-entries {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  align-content: flex-start;
+  
+  .team-member-wrapper {
+    width: 320px;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    
+    .team-member {
+      background: $headerBackground;
+      overflow: hidden;
+      position: relative;
+      
+      .team-member-header {
+        height: 100px;
+        width: 100%;
+        overflow: hidden;
+        
+        img.header-blur {
+          filter: blur(5px);
+        }
+      }
+      
+      img.team-member-img {
+        width: 150px;
+        height: 150px;
+        top: 25px;
+        left: 50%;
+        margin-left: -75px;
+        border: 1px solid #333;
+        
+        position: absolute;
+        z-index: 3;
+      } 
+      
+      .team-member-details {
+        padding-top: 85px;
+        padding-bottom: 10px;
+        z-index: 2;
+        color: #555;
+        
+        .team-member-name {
+          color: #000;
+          font-size: 0.8em;
+        }
+        
+        .team-member-role {
+          font-size: 0.6em;
+        }
+        
+        .team-member-contact {
+          width: 150px;
+          margin-left: auto;
+          margin-right: auto;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+          align-items: flex-start;
+          align-content: flex-start;
+        }
+        
+      }
+    }
   }
 }
