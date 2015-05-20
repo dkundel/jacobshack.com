@@ -148,7 +148,7 @@ $btn-primary-font-hover: #fff;
   @include button-variant-flat(#fff, transparent, $jacobshackBlue);
 }
 .btn-primary {
-  @include button-variant-flat($btn-primary-bg, $btn-primary-bg, $btn-primary-font-hover);
+  @include button-variant-flat($jacobshackBlue, transparent, #fff);
 }
 
 // Success appears as green
@@ -259,6 +259,26 @@ header {
   align-items: center;
   
   .wrapper {
+    
+    .header-buttons {
+      .col-xs-12 {
+        padding: 0;
+      }
+      
+      .indent {
+        a {
+          margin-left: 2.5px;
+          margin-right: 2.5px;
+        }
+        
+      }
+      
+      .social-button-left, .social-button-right {
+        margin-top: 5px;
+        padding-right: 2.5px;
+        padding-left: 2.5px;
+      }
+    }
   }
 }
 
