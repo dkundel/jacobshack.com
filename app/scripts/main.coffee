@@ -1,5 +1,10 @@
 $(() =>
   initializeMap()
+  
+  $(document).scroll((evt) -> 
+    elements = $('h1.section-title');
+    console.log(elements);
+  )
 )
 
 initializeMap = () ->
@@ -35,5 +40,3 @@ initializeMap = () ->
     
   google.maps.event.addListener jubMarker, 'click', () ->
     window.open "https://www.google.ie/maps/place/Jacobs+University+IRC,+Jacobs+University+Bremen,+Campus+Ring+1,+28759+Bremen,+Germany/@53.168237,8.650521,18z/data=!4m7!1m4!3m3!1s0x0:0x0!2zNTPCsDEwJzA1LjciTiA4wrAzOScwMS45IkU!3b1!3m1!1s0x47b12ca189108299:0x68806e1d530b2b1d?hl=en","_blank"
-  
-  

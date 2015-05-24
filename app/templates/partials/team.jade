@@ -11,7 +11,7 @@ mixin emailButton(email)
     i.fa.fa-lg.fa-inbox
 
 mixin teamEntry(name, role, image)
-  .team-member-wrapper.col-lg-3
+  .team-member-wrapper
     .team-member
       .team-member-header
         img.img-responsive.header-blur(src=image)
@@ -24,22 +24,23 @@ mixin teamEntry(name, role, image)
             block
      
     
-h2 The Team
-  p.lead.
-    jacobsHack! is organized by a diverse and cross-disciplinary team of students 
-    and alumni of Jacobs University Bremen. Feel free to contact us if you have 
-    and questions or issues regarding the event!
-  .team-entries
-    +teamEntry("Aulon", "Main-Organizer", "/images/team/aulon.jpg")
-      +emailButton("aulon@jacobshack.com")
-    +teamEntry("Kamila", "Main-Organizer", "/images/team/kamila.jpg")
-      +emailButton("kamila@jacobshack.com")
-    +teamEntry("Dominik", "Founder | Advisor", "/images/team/dominik.jpg")
-      +githubButton("dkundel")
-      +emailButton("dominik@jacobshack.com")
-      +twitterButton("dkundel")
-    +teamEntry("Naomi", "Co-Founder | Advisor", "/images/team/naomi.jpg")
-      +githubButton("npentrel")
-      +emailButton("naomi@jacobshack.com")
-      +twitterButton("naomi_pen")
-  
+h1#team.section-title
+  | The Team
+  span Meet the Organizers
+p.lead.
+  jacobsHack! is organized by a diverse and cross-disciplinary team of students 
+  and alumni of Jacobs University Bremen. Feel free to contact us if you have 
+  and questions or issues regarding the event!
+.team-entries
+  +teamEntry("Aulon", "Main-Organizer", "/images/team/aulon.jpg")
+    +emailButton("aulon@jacobshack.com")
+  +teamEntry("Kamila", "Main-Organizer", "/images/team/kamila.jpg")
+    +emailButton("kamila@jacobshack.com")
+  +teamEntry("Dominik", "Founder | Advisor", "/images/team/dominik.jpg")
+    +githubButton("dkundel")
+    +emailButton("dominik@jacobshack.com")
+    +twitterButton("dkundel")
+  +teamEntry("Naomi", "Co-Founder | Advisor", "/images/team/naomi.jpg")
+    +githubButton("npentrel")
+    +emailButton("naomi@jacobshack.com")
+    +twitterButton("naomi_pen")

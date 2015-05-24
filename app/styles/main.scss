@@ -422,11 +422,11 @@ footer {
         
         .team-member-name {
           color: #000;
-          font-size: 0.8em;
+          font-size: 1.5em;
         }
         
         .team-member-role {
-          font-size: 0.6em;
+          font-size: 1.2em;
         }
         
         .team-member-contact {
@@ -442,5 +442,161 @@ footer {
         
       }
     }
+  }
+}
+
+.about-entries {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  align-content: stretch;
+  
+  > .about-entry {
+    color: #000;
+    width: 320px;
+    height: 400px;
+    box-sizing: border-box;
+    text-align: center;
+    background: $headerBackground;
+    position: relative;
+    padding-bottom: 5px;
+    margin-bottom: 30px;
+    
+    .about-entry-header {
+      height: 200px;
+      overflow: hidden;
+    }
+    
+    .about-entry-icon {
+      border-radius: 100%;
+      background: $headerBackground;
+      position: absolute;
+      width: 75px;
+      height: 75px;
+      margin-left: -37.5px;
+      left: 50%;
+      margin-top: -37.5px;
+      
+      > span {
+        color: $jacobshackBlue;
+        line-height: 1.75;  
+      }
+    }
+    
+    h3 {
+      margin-top: 40px;
+    }
+    
+    p {
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+  }
+}
+
+section > div {
+  overflow: hidden;
+}
+
+.section-title {
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  outline: none;
+	text-decoration: none;
+	position: relative;
+	line-height: 1;
+	color: #9e9ba4;
+	display: inline-block;
+  text-transform: uppercase;
+  z-index: 1;
+  
+  font-family: 'Droid Sans', sans-serif;
+  font-weight: 700;
+  font-size: 5em;
+  transition: color 0.5s;
+  
+  &:hover {
+    color: #ccc;
+  }
+  
+  &::before {
+    content: '';
+    position: absolute;
+    height: 30px;
+    width: 100%;
+    top: 50%;
+    margin-top: -18px;
+    left: -10%;
+    z-index: 0;
+    background: #f9f9f9;
+    transform: rotate3d(0,0,1,45deg) scale3d(0,1,1);
+    transition: transform 0.5s;
+  }
+  
+  &:hover::before {
+    transform: rotate3d(0,0,1,45deg) scale3d(1,1,1);
+  }
+  
+  span {
+    text-transform: none;
+    font-size: 20%;
+    font-weight: 400;
+    position: absolute;
+//    right: 15px;
+    color: red;
+    bottom: 0;
+    opacity: 0;
+    transform: translate3d(-10px,-10px,0);
+    transition: transform 0.5s, opacity 0.5s;
+    z-index: 2;
+  }
+  
+  &:hover span {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+section.light {
+  .section-title {
+    color: $jacobshackBlue;
+    
+    &:hover {
+      color: $jacobshackBlue;
+    }
+    
+    &::before {
+      background: rgba(0,0,0,0.1);
+    }
+    
+    span {
+      color: #478CC7;
+    }
+  }
+}
+
+section.dark {
+  .section-title {
+    color: #fff;
+    
+    &:hover {
+      color: #fff;
+    }
+    
+    &::before {
+      background: rgba(255,255,255,0.5);
+    }
+    
+    span {
+      color: #fff;
+    }
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .section-title {
+    font-size: 3em;
   }
 }
