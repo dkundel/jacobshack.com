@@ -359,7 +359,8 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             'images/{,*/}*.webp',
             '{,*/}*.html',
-            'styles/fonts/{,*/}*.*'
+            'styles/fonts/{,*/}*.*',
+            'data/*.pdf'
           ]
         }, {
           src: 'node_modules/apache-server-configs/dist/.htaccess',
@@ -384,6 +385,13 @@ module.exports = function (grunt) {
         cwd: '<%= config.app %>/styles',
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
+      },
+      fb: {
+        expand: true,
+        dot: true,
+        cwd: '<%= config.app %>/images',
+        src: 'fb_{preview,square}.jpg',
+        dest: '<%= config.dist %>/images'
       }
     },
 
@@ -493,7 +501,8 @@ module.exports = function (grunt) {
     'modernizr',
     'rev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'copy:fb'
   ]);
 
   grunt.registerTask('default', [
