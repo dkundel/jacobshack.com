@@ -312,7 +312,7 @@ header {
 
 section {
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 30px;
   &.light {
     
   }
@@ -340,6 +340,13 @@ footer {
   color: #fff;
   background: $jacobshackBlue;
   margin: 0;
+  
+  .jh-footer-logo {
+    padding-bottom: 0;
+    img {
+      width: 80px;
+    }
+  }
 }
 
 .btn-round-social {
@@ -517,7 +524,7 @@ section > div {
   font-size: 5em;
   transition: color 0.5s;
   
-  &:hover {
+  &:hover, &.active {
     color: #ccc;
   }
   
@@ -535,7 +542,7 @@ section > div {
     transition: transform 0.5s;
   }
   
-  &:hover::before {
+  &:hover::before, &.active::before {
     transform: rotate3d(0,0,1,45deg) scale3d(1,1,1);
   }
   
@@ -544,7 +551,6 @@ section > div {
     font-size: 20%;
     font-weight: 400;
     position: absolute;
-//    right: 15px;
     color: red;
     bottom: 0;
     opacity: 0;
@@ -553,7 +559,7 @@ section > div {
     z-index: 2;
   }
   
-  &:hover span {
+  &:hover span, &.active span {
     opacity: 1;
     transform: translate3d(0,0,0);
   }
@@ -563,7 +569,7 @@ section.light {
   .section-title {
     color: $jacobshackBlue;
     
-    &:hover {
+    &:hover, &.active {
       color: $jacobshackBlue;
     }
     
@@ -581,7 +587,7 @@ section.dark {
   .section-title {
     color: #fff;
     
-    &:hover {
+    &:hover, &.active {
       color: #fff;
     }
     
@@ -598,5 +604,47 @@ section.dark {
 @media screen and (max-width: 670px) {
   .section-title {
     font-size: 3em;
+  }
+}
+
+.nav-jacobshack {
+  li {
+    font-size: 20px;
+    a, a:visited, a:hover, a:focus {
+      color: $jacobshackBlue;
+    }
+    &.active, &.active:hover, &.active:focus {
+      background: $jacobshackBlue;
+      
+      a, a:visited, a:hover, a:focus {
+        background: $jacobshackBlue;
+        color: #fff;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-jacobshack li {
+    display: table-cell;
+    width: 1%;
+  }
+}
+
+#faqContainer {
+  #faqContent {
+    background: $jacobshackBlue;
+    color: #fff;
+    .faq-category {
+      padding: 10px;
+      &:not(.active) {
+        display: none;
+      }
+      
+      .faq-entry > * {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
   }
 }

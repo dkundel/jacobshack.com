@@ -1,4 +1,133 @@
-h1#faq.section-title 
-  | F.A.Q
-  span Frequently Asked Questions
-p Todo...
+mixin faqEntry(question)
+  .faq-entry.col-xs-12.col-sm-6.col-md-6.col-lg-4
+    h3= question
+    block
+
+.row
+  .col-xs-12
+    h1#faq.section-title 
+      | F.A.Q
+      span Frequently Asked Questions
+    p.lead
+      | We know you will have almost certainly some questions. We put the answers to the 
+      | most common ones right here. But if you can't find an answer to your question simply 
+      | drop us a line at: &nbsp;
+      a(href="mailto:team@jacobshack.com", target="_blank", alt="team@jacobshack.com") team@jacobshack.com
+.row
+  .col-xs-12.col-sm-12.col-md-10.col-md-offset-1.col-lg-10.col-lg-offset-1 
+    #faqContainer
+      ul#faqNavigation.nav.nav-justified.nav-jacobshack
+        li(role="presentation").active.faq-nav-entry
+          a(href="#application")
+            span.fa.fa-edit
+            span.hidden-xs &nbsp; Application
+        li(role="presentation").faq-nav-entry
+          a(href="#hacking")
+            span.fa.fa-code
+            span.hidden-xs &nbsp; Hacking
+        li(role="presentation").faq-nav-entry
+          a(href="#travel")
+            span.fa.fa-plane
+            span.hidden-xs &nbsp; Travel
+        li(role="presentation").faq-nav-entry
+          a(href="#others")
+            span.fa.fa-question-circle
+            span.hidden-xs &nbsp; Others
+        
+        
+      #faqContent
+        #application.faq-category.row.active
+          +faqEntry("How to apply?")
+            p
+              | We will open the applications soon. If you want to 
+              | avoid missing the application phase feel free to &nbsp;
+              a(href="#subscribe") subscribe for updates
+              | . 
+              
+          +faqEntry("What is the application process?")
+            p
+              | We are looking for a diverse group of hackers at our hackathon.
+              | For this we will ask you a couple of questions in the application.
+              | That said we are looking for anyone who is creative or just simply
+              | passionate for technology. You don't necessarily have to have any previous 
+              | hackathon experience. We will ask a variety of questions that will
+              | give you the chance to show us why you are awesome!
+              
+          +faqEntry("I'm not a student anymore. Can I apply?")
+            p
+              | This hackathon is specficially design for university students.
+              | Unfortunately we are not able to accept anyone who is not currently
+              | enrolled at a university or graduated longer than one year ago.
+        #hacking.faq-category.row
+          +faqEntry("What do I need to bring?")
+            p
+              | Aside of your laptop, phone, chargers and special hardware that you might need 
+              | for your hack you should bring the following thinks:
+            p 
+              | Enthusiasm. Basic toiletries and a sleeping bag in case you
+              | are planning to sleep might be useful as well!
+              | Food and drinks will be provided during the event. 
+              | Please make sure to mention special dietary requirements in your registration.
+              
+          +faqEntry("What should I hack on?")
+            p
+              | Anything that you are passionate about. No worries you don't have to come with
+              | an idea or a team fixed. You can meet great people at the event and probably
+              | together you can come up with a great idea.
+            p
+              | jacobsHack! does not have an overall theme meaning you can qualify with any
+              | project that you code within the 24 hours to win the main prize. However
+              | there will be some seperate prizes that will be themed. These themes will
+              | be announced at the event. 
+              
+          +faqEntry("What can I win?")
+            p
+              | We will have a variety of prizes to win. From a main prize that everyone qualifies
+              | for, who codes something in the 24 hours and presents it, to themed prizes provided
+              | by our sponsors. Some prizes might be cash prizes while others might be products or
+              | vouchers.
+        #travel.faq-category.row
+          +faqEntry("How do I get to jacobsHack!?")
+            p
+              | jacobsHack! will take place at the Jacobs University Bremen in the north
+              | of Bremen, Germany. Bremen has its own airport with Ryanair flights from
+              | all over Europe and the cities Hamburg and Hannover are very close with 
+              | frequent train and bus connections. Once you arrive in Bremen you can 
+              | follow the instructions here: 
+              a(href="/data/trip_to_jacobs_university_bremen.pdf", target="_blank") How to get to Jacobs University Bremen
+              
+          +faqEntry("Will there be travel reimbursement?")
+            p
+              | We are planning to provide students with travel reimbursement but 
+              | we do not have concrete numbers yet how much we can offer. We will
+              | provide more information once applications open.
+              
+          +faqEntry("I'm arriving a day before the event. Can you host me?")
+            p
+              | We can't provide you with a proper room but closer to the event we will
+              | get in touch with everyone to estimate how many people are arriving earlier
+              | and we'll give our best to find some fellow students at the university
+              | that might be able to host you one night in their rooms.
+        #others.faq-category.row
+          +faqEntry("Who organizes jacobsHack!?")
+            p
+              | jacobsHack! was founded and is organied by students and alumni 
+              | of the Jacobs University Bremen. You can see the whole team and their
+              | contacts in our &nbsp;
+              a(href="#team") Team section
+              | .
+              
+          +faqEntry("What is the application process?")
+            p
+              | We are looking for a diverse group of hackers at our hackathon.
+              | For this we will ask you a couple of questions in the application.
+              | That said we are looking for anyone who is creative or just simply
+              | passionate for technology. You don't necessarily have to have any previous 
+              | hackathon experience. We will ask a variety of questions that will
+              | give you the chance to show us why you are awesome!
+              
+          +faqEntry("I'm not a student anymore. Can I apply.")
+            p
+              | This hackathon is specficially design for university students.
+              | Unfortunately we are not able to accept anyone who is not currently
+              | enrolled at a university or graduated longer than one year ago.
