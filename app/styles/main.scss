@@ -2,7 +2,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 $fa-font-path: "../bower_components/font-awesome/fonts";
 @import "font-awesome/scss/font-awesome";
 // bower:scss
-@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+@import "bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
 // endbower
 
 $headerBackground: #ECF0F1;
@@ -646,5 +646,21 @@ section.dark {
         padding-right: 10px;
       }
     }
+  }
+}
+
+.subheading {
+  font-weight: lighter;
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.partner-entry {
+  padding-left: 20px;
+  padding-right: 20px;
+  
+  img {
+    max-height: 160px;
+    max-width: 100%;
   }
 }
