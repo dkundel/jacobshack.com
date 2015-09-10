@@ -675,3 +675,45 @@ section.dark {
 .apply-button {
   margin-top: 30px;
 }
+
+#kungFury {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 9000;
+  
+  img {
+    min-width: 100%;
+    min-height: 100%;
+  }
+  
+  #loading {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    
+    h2 {
+      font-family: monospace;
+      color: #fff;
+    }
+    
+    #loadingBar {
+      width: 410px;
+      border: 5px solid white;
+      height: 60px;
+      
+      .loading-entry {
+        display: inline-block;
+        width: 0;
+        height: 50px;
+        background: #fff;
+        transition: width 3s;
+      }
+    }
+  }
+}

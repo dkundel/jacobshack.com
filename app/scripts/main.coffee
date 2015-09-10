@@ -3,6 +3,10 @@ $(() =>
   
   $(window).scroll scrollSpy
   
+  $('.applybtn').click openApply
+  
+  $('#kungFury').click goToPortal
+  
   attachFaqListener()
 )
 
@@ -58,3 +62,29 @@ attachFaqListener = () ->
       $('.faq-category.active').removeClass('active')
       $($link.find('a').attr('href')).addClass('active')
       true
+      
+      
+openApply = () ->
+  $kungFury = $('#kungFury')
+  $boardGif = $('#boardgif')
+  $codingGif = $('#codinggif')
+  $loading = $('#loading')
+  $loadingBar = $('.loading-entry')
+  
+  $kungFury.show 'scale'
+  setTimeout () ->
+    $codingGif.hide()
+    $loading.show()
+    $loadingBar.width 400
+    setTimeout () ->
+      goToPortal()
+    , 3000
+  , 2000
+  
+  
+goToPortal = () ->
+  $('#portalLink')[0].click()
+  $('#kungFury').hide()
+  $('#codinggif').show()
+  $('.loading-entry').width 0
+  $('#loading').hide()
