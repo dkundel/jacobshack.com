@@ -83,8 +83,9 @@ openApply = () ->
   
   
 goToPortal = () ->
-  $('#portalLink')[0].click()
-  $('#kungFury').hide()
-  $('#codinggif').show()
-  $('.loading-entry').width 0
-  $('#loading').hide()
+  window.location.href='https://my.jacobshack.com/';
+  # $('#portalLink')[0].click()
+  # $('#kungFury').hide()
+  # $('#codinggif').show()
+  # $('.loading-entry').width 0
+  # $('#loading').hide()
